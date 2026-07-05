@@ -906,6 +906,7 @@ class GameScene extends Phaser.Scene {
       dropQ: Phaser.Input.Keyboard.KeyCodes.Q,
       debugSpawn: Phaser.Input.Keyboard.KeyCodes.SPACE,
       pauseEsc: Phaser.Input.Keyboard.KeyCodes.ESC,
+      restartR: Phaser.Input.Keyboard.KeyCodes.R,
     });
 
     // C / E 触发一次旋转，不需要长按持续旋转。
@@ -923,6 +924,7 @@ class GameScene extends Phaser.Scene {
       if (!this.isPaused) this.spawnDebugFishBlock();
     });
     this.keys.pauseEsc.on("down", () => this.togglePause());
+    this.keys.restartR.on("down", () => this.restartGame());
   }
 
   createControlPanel() {
@@ -1043,7 +1045,7 @@ class GameScene extends Phaser.Scene {
     this.restartButton.setDepth(1200);
     this.restartButton.setSize(44, 44);
     this.restartButton.setInteractive(
-      new Phaser.Geom.Circle(0, 0, 22),
+      new Phaser.Geom.Circle(22, 22, 22),
       Phaser.Geom.Circle.Contains
     );
     this.restartButton.on("pointerdown", (pointer, localX, localY, event) => {
@@ -1058,7 +1060,7 @@ class GameScene extends Phaser.Scene {
     this.closeButton.setDepth(1200);
     this.closeButton.setSize(44, 44);
     this.closeButton.setInteractive(
-      new Phaser.Geom.Circle(0, 0, 22),
+      new Phaser.Geom.Circle(22, 22, 22),
       Phaser.Geom.Circle.Contains
     );
     this.closeButton.on("pointerdown", (pointer, localX, localY, event) => {
