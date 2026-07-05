@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gravity Tower</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #111827;
+        overflow: hidden;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      canvas {
+        display: block;
+        max-width: 100vw;
+        max-height: 100vh;
+        width: auto !important;
+        height: auto !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      Phaser 本体通过 CDN 引入。
+      这个写法不需要安装 npm 包，直接打开 HTML 文件就能跑。
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+
+    <!-- 先加载场景类，再加载创建游戏实例的入口文件。 -->
+    <script src="./game.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
