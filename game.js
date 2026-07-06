@@ -900,20 +900,20 @@ class GameScene extends Phaser.Scene {
       right: Phaser.Input.Keyboard.KeyCodes.D,
       cursorLeft: Phaser.Input.Keyboard.KeyCodes.LEFT,
       cursorRight: Phaser.Input.Keyboard.KeyCodes.RIGHT,
-      rotateC: Phaser.Input.Keyboard.KeyCodes.C,
-      rotateE: Phaser.Input.Keyboard.KeyCodes.E,
-      dropZ: Phaser.Input.Keyboard.KeyCodes.Z,
-      dropQ: Phaser.Input.Keyboard.KeyCodes.Q,
+      rotateUp: Phaser.Input.Keyboard.KeyCodes.UP,
+      rotateW: Phaser.Input.Keyboard.KeyCodes.W,
+      dropDown: Phaser.Input.Keyboard.KeyCodes.DOWN,
+      dropS: Phaser.Input.Keyboard.KeyCodes.S,
       debugSpawn: Phaser.Input.Keyboard.KeyCodes.SPACE,
       pauseEsc: Phaser.Input.Keyboard.KeyCodes.ESC,
       restartR: Phaser.Input.Keyboard.KeyCodes.R,
     });
 
-    // C / E 触发一次旋转，不需要长按持续旋转。
-    this.keys.rotateC.on("down", () => {
+    // Up / W 触发一次旋转，不需要长按持续旋转。
+    this.keys.rotateUp.on("down", () => {
       if (!this.isPaused) this.rotateCurrentFish();
     });
-    this.keys.rotateE.on("down", () => {
+    this.keys.rotateW.on("down", () => {
       if (!this.isPaused) this.rotateCurrentFish();
     });
 
@@ -2710,7 +2710,7 @@ class GameScene extends Phaser.Scene {
 
     const MatterBody = Phaser.Physics.Matter.Matter.Body;
     const isKeyboardDropDown =
-      this.keys && (this.keys.dropZ.isDown || this.keys.dropQ.isDown);
+      this.keys && (this.keys.dropDown.isDown || this.keys.dropS.isDown);
     const targetSpeed = this.isDropButtonHeld || isKeyboardDropDown
       ? this.fastDropSpeed
       : this.fallingSpeed;
